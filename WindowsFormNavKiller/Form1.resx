@@ -117,7 +117,430 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="&gt;&gt;clearChrome.Name" xml:space="preserve">
+    <value>clearChrome</value>
+  </data>
+  <data name="&gt;&gt;clearChrome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clearChrome.Parent" xml:space="preserve">
+    <value>groupChrome</value>
+  </data>
+  <data name="&gt;&gt;clearChrome.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;killChrome.Name" xml:space="preserve">
+    <value>killChrome</value>
+  </data>
+  <data name="&gt;&gt;killChrome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;killChrome.Parent" xml:space="preserve">
+    <value>groupChrome</value>
+  </data>
+  <data name="&gt;&gt;killChrome.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="groupChrome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>182, 12</value>
+  </data>
+  <data name="groupChrome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 46</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="groupChrome.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="groupChrome.Text" xml:space="preserve">
+    <value>Chrome</value>
+  </data>
+  <data name="&gt;&gt;groupChrome.Name" xml:space="preserve">
+    <value>groupChrome</value>
+  </data>
+  <data name="&gt;&gt;groupChrome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupChrome.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupChrome.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="clearChrome.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="clearChrome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 19</value>
+  </data>
+  <data name="clearChrome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 17</value>
+  </data>
+  <data name="clearChrome.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="clearChrome.Text" xml:space="preserve">
+    <value>Clear Cache</value>
+  </data>
+  <data name="&gt;&gt;clearChrome.Name" xml:space="preserve">
+    <value>clearChrome</value>
+  </data>
+  <data name="&gt;&gt;clearChrome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clearChrome.Parent" xml:space="preserve">
+    <value>groupChrome</value>
+  </data>
+  <data name="&gt;&gt;clearChrome.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="killChrome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 13</value>
+  </data>
+  <data name="killChrome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="killChrome.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="killChrome.Text" xml:space="preserve">
+    <value>KILL</value>
+  </data>
+  <data name="&gt;&gt;killChrome.Name" xml:space="preserve">
+    <value>killChrome</value>
+  </data>
+  <data name="&gt;&gt;killChrome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;killChrome.Parent" xml:space="preserve">
+    <value>groupChrome</value>
+  </data>
+  <data name="&gt;&gt;killChrome.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;clearFireFox.Name" xml:space="preserve">
+    <value>clearFireFox</value>
+  </data>
+  <data name="&gt;&gt;clearFireFox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clearFireFox.Parent" xml:space="preserve">
+    <value>groupFireFox</value>
+  </data>
+  <data name="&gt;&gt;clearFireFox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;killFireFox.Name" xml:space="preserve">
+    <value>killFireFox</value>
+  </data>
+  <data name="&gt;&gt;killFireFox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;killFireFox.Parent" xml:space="preserve">
+    <value>groupFireFox</value>
+  </data>
+  <data name="&gt;&gt;killFireFox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupFireFox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>182, 64</value>
+  </data>
+  <data name="groupFireFox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 46</value>
+  </data>
+  <data name="groupFireFox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="groupFireFox.Text" xml:space="preserve">
+    <value>Firefox</value>
+  </data>
+  <data name="&gt;&gt;groupFireFox.Name" xml:space="preserve">
+    <value>groupFireFox</value>
+  </data>
+  <data name="&gt;&gt;groupFireFox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupFireFox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupFireFox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="clearFireFox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="clearFireFox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 19</value>
+  </data>
+  <data name="clearFireFox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 17</value>
+  </data>
+  <data name="clearFireFox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="clearFireFox.Text" xml:space="preserve">
+    <value>Clear Cache</value>
+  </data>
+  <data name="&gt;&gt;clearFireFox.Name" xml:space="preserve">
+    <value>clearFireFox</value>
+  </data>
+  <data name="&gt;&gt;clearFireFox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clearFireFox.Parent" xml:space="preserve">
+    <value>groupFireFox</value>
+  </data>
+  <data name="&gt;&gt;clearFireFox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="killFireFox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 13</value>
+  </data>
+  <data name="killFireFox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="killFireFox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="killFireFox.Text" xml:space="preserve">
+    <value>KILL</value>
+  </data>
+  <data name="&gt;&gt;killFireFox.Name" xml:space="preserve">
+    <value>killFireFox</value>
+  </data>
+  <data name="&gt;&gt;killFireFox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;killFireFox.Parent" xml:space="preserve">
+    <value>groupFireFox</value>
+  </data>
+  <data name="&gt;&gt;killFireFox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;clearEdge.Name" xml:space="preserve">
+    <value>clearEdge</value>
+  </data>
+  <data name="&gt;&gt;clearEdge.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clearEdge.Parent" xml:space="preserve">
+    <value>groupEdge</value>
+  </data>
+  <data name="&gt;&gt;clearEdge.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;killEdge.Name" xml:space="preserve">
+    <value>killEdge</value>
+  </data>
+  <data name="&gt;&gt;killEdge.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;killEdge.Parent" xml:space="preserve">
+    <value>groupEdge</value>
+  </data>
+  <data name="&gt;&gt;killEdge.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupEdge.Location" type="System.Drawing.Point, System.Drawing">
+    <value>182, 116</value>
+  </data>
+  <data name="groupEdge.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 46</value>
+  </data>
+  <data name="groupEdge.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="groupEdge.Text" xml:space="preserve">
+    <value>Microsoft Edge</value>
+  </data>
+  <data name="&gt;&gt;groupEdge.Name" xml:space="preserve">
+    <value>groupEdge</value>
+  </data>
+  <data name="&gt;&gt;groupEdge.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupEdge.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupEdge.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="clearEdge.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="clearEdge.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 19</value>
+  </data>
+  <data name="clearEdge.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 17</value>
+  </data>
+  <data name="clearEdge.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="clearEdge.Text" xml:space="preserve">
+    <value>Clear Cache</value>
+  </data>
+  <data name="&gt;&gt;clearEdge.Name" xml:space="preserve">
+    <value>clearEdge</value>
+  </data>
+  <data name="&gt;&gt;clearEdge.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clearEdge.Parent" xml:space="preserve">
+    <value>groupEdge</value>
+  </data>
+  <data name="&gt;&gt;clearEdge.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="killEdge.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 15</value>
+  </data>
+  <data name="killEdge.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="killEdge.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="killEdge.Text" xml:space="preserve">
+    <value>KILL</value>
+  </data>
+  <data name="&gt;&gt;killEdge.Name" xml:space="preserve">
+    <value>killEdge</value>
+  </data>
+  <data name="&gt;&gt;killEdge.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;killEdge.Parent" xml:space="preserve">
+    <value>groupEdge</value>
+  </data>
+  <data name="&gt;&gt;killEdge.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="textBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="textBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 218</value>
+  </data>
+  <data name="textBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>387, 141</value>
+  </data>
+  <data name="textBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="textBox.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;textBox.Name" xml:space="preserve">
+    <value>textBox</value>
+  </data>
+  <data name="&gt;&gt;textBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="emptyBin.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="emptyBin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 17</value>
+  </data>
+  <data name="emptyBin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 17</value>
+  </data>
+  <data name="emptyBin.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="emptyBin.Text" xml:space="preserve">
+    <value>Empty Recycle Box</value>
+  </data>
+  <data name="&gt;&gt;emptyBin.Name" xml:space="preserve">
+    <value>emptyBin</value>
+  </data>
+  <data name="&gt;&gt;emptyBin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;emptyBin.Parent" xml:space="preserve">
+    <value>recycleBinBox</value>
+  </data>
+  <data name="&gt;&gt;emptyBin.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="recycleBinBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 169</value>
+  </data>
+  <data name="recycleBinBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>389, 43</value>
+  </data>
+  <data name="recycleBinBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="recycleBinBox.Text" xml:space="preserve">
+    <value>Recycle Bin</value>
+  </data>
+  <data name="&gt;&gt;recycleBinBox.Name" xml:space="preserve">
+    <value>recycleBinBox</value>
+  </data>
+  <data name="&gt;&gt;recycleBinBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;recycleBinBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;recycleBinBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pictureBox.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="pictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="pictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 150</value>
+  </data>
+  <data name="pictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pictureBox.Name" xml:space="preserve">
+    <value>pictureBox</value>
+  </data>
+  <data name="&gt;&gt;pictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>413, 371</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Navigator Killer</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

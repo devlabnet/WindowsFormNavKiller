@@ -5,6 +5,8 @@ using System.IO;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Globalization;
+using System.Resources;
 
 namespace WindowsFormNavKiller
 {
@@ -14,6 +16,7 @@ namespace WindowsFormNavKiller
         private int dirDeleted;
         String appDataLocalDir;
         String appDataDir;
+        ResourceManager LocRM;
 
         enum RecycleFlags : int
         {
@@ -38,6 +41,11 @@ namespace WindowsFormNavKiller
 
         public Form1()
         {
+            bool oneNavDetected = false;
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
+            // Declare a Resource Manager instance
+            LocRM = new ResourceManager("WindowsFormNavKiller.WinFormStrings", typeof(Form1).Assembly);
+
             InitializeComponent();
             pictureBox.Focus();
             pictureBox.Select();
@@ -45,6 +53,7 @@ namespace WindowsFormNavKiller
             if (proc.Length > 0)
             {
                 groupChrome.Enabled = true;
+                oneNavDetected = true;
             }
             else
             {
@@ -54,6 +63,7 @@ namespace WindowsFormNavKiller
             if (proc.Length > 0)
             {
                 groupFireFox.Enabled = true;
+                oneNavDetected = true;
             }
             else
             {
@@ -63,6 +73,7 @@ namespace WindowsFormNavKiller
             if (proc.Length > 0)
             {
                 groupEdge.Enabled = true;
+                oneNavDetected = true;
             }
             else
             {
@@ -70,17 +81,20 @@ namespace WindowsFormNavKiller
             }
             AppendText("------------------------------------------------------", Color.Blue);
             String UserName = Environment.UserName;
-            AppendText(String.Format("UserName: {0}", UserName), Color.Blue);
+            AppendText(string.Format(LocRM.GetString("UserName") +": {0}", UserName), Color.Blue);
             AppendText("------------------------------------------------------", Color.Blue);
             appDataDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            AppendText(String.Format("appData: {0}", appDataDir), Color.Blue);
+            AppendText(LocRM.GetString("appDataStr"), Color.Blue, false);
+            AppendText(String.Format(": {0}", appDataDir), Color.Blue);
             appDataLocalDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            AppendText(String.Format("appData Local: {0}", appDataLocalDir), Color.Blue);
+            AppendText(LocRM.GetString("appDataStr"), Color.Blue, false);
+            AppendText(String.Format(" Local: {0}", appDataLocalDir), Color.Blue);
             AppendText("------------------------------------------------------", Color.Blue);
             int rbc = GetRecycleBinCount();
-            AppendText(String.Format("Recycle Bin Count: {0}", rbc), Color.OrangeRed);
+            String recycleBinCountStr = LocRM.GetString("recycleBinCountStr");
+            AppendText(String.Format(recycleBinCountStr+": {0}", rbc), Color.OrangeRed);
             AppendText("------------------------------------------------------", Color.Blue);
-            if (rbc == 0)
+            if ((rbc == 0) || (oneNavDetected == false))
             {
                 recycleBinBox.Enabled = false;
             }
@@ -110,21 +124,21 @@ namespace WindowsFormNavKiller
                 if (emptyBin.Checked)
                 {
                     DialogResult result;
-                    result = MessageBox.Show("Are you sure to delete all items in recycle bin", "Empty Recycle bin", MessageBoxButtons.YesNo);
+                    result = MessageBox.Show(LocRM.GetString("RBCleanStr"), LocRM.GetString("RBCleanBtnStr"), MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
                         try
                         {
                             uint IsSuccess = SHEmptyRecycleBin(IntPtr.Zero, null, RecycleFlags.SHERB_NOCONFIRMATION);
-                            MessageBox.Show("Empty the RecycleBin successsfully", "Empty the RecycleBin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            AppendText(String.Format("Empty Recycle Bin successsfully ... "), Color.Red);
+                            MessageBox.Show(LocRM.GetString("RBCleanOkStr"), LocRM.GetString("RBCleanBtnStr"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AppendText(String.Format(LocRM.GetString("RBCleanOkStr")), Color.Red);
                             AppendText("------------------------------------------------------", Color.Green);
                             recycleBinBox.Enabled = false;
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("Empty the RecycleBin failed" + ex.Message, "Empty the RecycleBin", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                            AppendText(String.Format("Empty Recycle Bin failed ... "), Color.Red);
+                            MessageBox.Show(LocRM.GetString("RBCleanBadStr") + ex.Message, LocRM.GetString("RBCleanBtnStr"), MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                            AppendText(String.Format(LocRM.GetString("RBCleanBadStr")), Color.Red);
                             AppendText("------------------------------------------------------", Color.Green);
                             //Application.Exit();
                         }
@@ -138,7 +152,7 @@ namespace WindowsFormNavKiller
         {
             Process[] proc = Process.GetProcessesByName("chrome");
             AppendText("------------------------------------------------------", Color.Green);
-            AppendText("Kill Chrome Process...", Color.Green);
+            AppendText(LocRM.GetString("killStr") + " Chrome ...", Color.Green);
             foreach (Process theprocess in proc)
             {
                 theprocess.Kill();
@@ -146,7 +160,7 @@ namespace WindowsFormNavKiller
             groupChrome.Enabled = false;
             if (clearChrome.Checked)
             {
-                AppendText("Clearing Chrome Caches...", Color.Green);
+                AppendText(LocRM.GetString("clearCacheStr") + " Chrome ...", Color.Green);
                 fileDeleted = 0;
                 dirDeleted = 0;
                 String UserName = Environment.UserName;
@@ -171,7 +185,7 @@ namespace WindowsFormNavKiller
                 dirName = appDataLocalDir + @"\Google\Chrome\User Data\Default\Cookies-Journal";
                 DeleteDirectory(dirName);
                 // Clear Session Restore Data
-                AppendText("Clearing Chrome Session Data...", Color.Green);
+                AppendText(LocRM.GetString("clearSessionDataStr") + " Chrome ...", Color.Green);
                 //cleanPrefFile - pref "C:\Users\$($_.Name)\AppData\Local\Google\Chrome\User Data\Default\Preferences"
                 cleanChromePrefFile(appDataLocalDir + @"\Google\Chrome\User Data\Default\Preferences");
                 AppendText(String.Format("Done, Files Deleted: {0}", fileDeleted), Color.Red);
@@ -184,7 +198,7 @@ namespace WindowsFormNavKiller
         {
             Process[] proc = Process.GetProcessesByName("firefox");
             AppendText("------------------------------------------------------", Color.Green);
-            AppendText("Kill Mozilla Firefox Process...", Color.Green);
+            AppendText(LocRM.GetString("killStr") + " Mozilla Firefox ...", Color.Green);
             foreach (Process theprocess in proc)
             {
                 theprocess.Kill();
@@ -199,7 +213,7 @@ namespace WindowsFormNavKiller
                 // Only get subdirectories that begin with the letter ".default"
 //                string[] dirs = Directory.GetDirectories(@"C:\Users\" + Environment.UserName + @"\AppData\Local\Mozilla\Firefox\Profiles\", "*.default*");
                 string[] dirs = Directory.GetDirectories(appDataLocalDir + @"\Mozilla\Firefox\Profiles\", "*.default*");
-                AppendText("Clearing Mozilla Firefox Caches...", Color.Green);
+                AppendText(LocRM.GetString("clearCacheStr") + " Mozilla Firefox ...", Color.Green);
                 String searchPattern = "cache*|thumbnails|cookies.sqlite|webappsstore.sqlite|chromeappsstore.sqlite";
                 foreach (string dir in dirs)
                 {
@@ -213,8 +227,9 @@ namespace WindowsFormNavKiller
                         }
                     }
                 }
+                
                 // Clear Session Restore Data
-                AppendText("Clearing Mozilla Firefox Session Data...", Color.Green);
+                AppendText(LocRM.GetString("clearSessionDataStr") + " Mozilla Firefox ...", Color.Green);
                 //dirs = Directory.GetDirectories(@"C:\Users\" + Environment.UserName + @"\AppData\Roaming\Mozilla\Firefox\Profiles\", "*.default*");
                 dirs = Directory.GetDirectories(appDataDir + @"\Mozilla\Firefox\Profiles\", "*.default*");
                 foreach (string dir in dirs)
@@ -222,10 +237,16 @@ namespace WindowsFormNavKiller
                     string[] subDirs = Directory.GetDirectories(dir, "sessionstore-backups", SearchOption.AllDirectories);
                     foreach (string sub in subDirs)
                     {
-                        DeleteDirectory(sub);
+                        DeleteFilesInDirectory(sub);
+                        //DeleteDirectory(sub);
                     }
                 }
-                AppendText(String.Format("Done, Dirs Deleted: {0} , Files Deleted: {1}", dirDeleted, fileDeleted), Color.Red);
+                
+
+                AppendText(LocRM.GetString("doneStr") + " " + LocRM.GetString("dirDelStr"), Color.Red, false);
+                AppendText(String.Format(": {0} ", dirDeleted), Color.Red, false);
+                AppendText(LocRM.GetString("fileDelStr"), Color.Red, false);
+                AppendText(String.Format(": {0} ", fileDeleted), Color.Red);
                 AppendText("------------------------------------------------------", Color.Green);
                 emptyRecycleBin();
             }
@@ -234,7 +255,7 @@ namespace WindowsFormNavKiller
         {
             Process[] proc = Process.GetProcessesByName("MicrosoftEdge");
             AppendText("------------------------------------------------------", Color.Green);
-            AppendText("Kill Microsoft Edge Process...", Color.Green);
+            AppendText(LocRM.GetString("killStr") + " Microsoft Edge ...", Color.Green);
             foreach (Process theprocess in proc)
             {
                 theprocess.Kill();
@@ -243,7 +264,7 @@ namespace WindowsFormNavKiller
             groupEdge.Enabled = false;
             if (clearEdge.Checked)
             {
-                AppendText("Clearing Microsoft Edge Caches...", Color.Green);
+                AppendText(LocRM.GetString("clearCacheStr") + " Microsoft Edge ...", Color.Green);
                 fileDeleted = 0;
                 dirDeleted = 0;
                 String UserName = Environment.UserName;
@@ -258,14 +279,38 @@ namespace WindowsFormNavKiller
                 //DeleteDirectory(dirName);
 
                 // Clear Session Restore Data
-                AppendText("Clearing Microsoft Edge Session Data...", Color.Green);
+                AppendText(LocRM.GetString("clearSessionDataStr") + " Microsoft Edge ...", Color.Green);
                 string[] theFiles = Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.History), "*", SearchOption.AllDirectories);
                 foreach (string file in theFiles)
                 {
                     try
                     {
                         File.Delete(file);
-                        AppendText("delete file: " + file, Color.CadetBlue);
+                        AppendText(LocRM.GetString("delFileStr") + file, Color.CadetBlue);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                    fileDeleted++;
+                }
+                AppendText(LocRM.GetString("doneStr") + " " + LocRM.GetString("fileDelStr"), Color.Red, false);
+                AppendText(string.Format(": {0} ", fileDeleted), Color.Red);
+                AppendText("------------------------------------------------------", Color.Green);
+            }
+            emptyRecycleBin();
+        }
+
+        private void DeleteFilesInDirectory(string path)
+        {
+            if (Directory.Exists(path))
+            {
+                //Delete all files from the Directory
+                foreach (string file in Directory.GetFiles(path))
+                {
+                    try
+                    {
+                        File.Delete(file);
+                        AppendText(LocRM.GetString("delFileStr") + file, Color.YellowGreen);
                     }
                     catch (Exception)
                     {
@@ -273,10 +318,7 @@ namespace WindowsFormNavKiller
                     fileDeleted++;
                 }
 
-                AppendText(String.Format("Done, Files Deleted: {0}", fileDeleted), Color.Red);
-                AppendText("------------------------------------------------------", Color.Green);
             }
-            emptyRecycleBin();
         }
 
         private void DeleteDirectory(string path)
@@ -291,7 +333,7 @@ namespace WindowsFormNavKiller
                     try
                     {
                         File.Delete(file);
-                        AppendText("delete file: " + file, Color.CadetBlue);
+                        AppendText(LocRM.GetString("delFileStr") + file, Color.CadetBlue);
                    }
                     catch (Exception)
                     {
@@ -314,7 +356,7 @@ namespace WindowsFormNavKiller
                 try
                 {
                     Directory.Delete(path);
-                    AppendText("delete directory: " + path, Color.Violet);
+                    AppendText(LocRM.GetString("delDirStr") + path, Color.Violet);
                 }
                 catch (Exception)
                 {
@@ -343,12 +385,14 @@ namespace WindowsFormNavKiller
             textBox.Clear();
             AppendText("------------------------------------------------------", Color.Blue);
             String UserName = Environment.UserName;
-            AppendText(String.Format("UserName: {0}", UserName), Color.Blue);
+            AppendText(string.Format(LocRM.GetString("UserName") + ": {0}", UserName), Color.Blue);
             AppendText("------------------------------------------------------", Color.Blue);
             appDataDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            AppendText(String.Format("appData: {0}", appDataDir), Color.Blue);
+            AppendText(LocRM.GetString("appDataStr"), Color.Blue, false);
+            AppendText(String.Format(": {0}", appDataDir), Color.Blue);
             appDataLocalDir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            AppendText(String.Format("appData Local: {0}", appDataLocalDir), Color.Blue);
+            AppendText(LocRM.GetString("appDataStr"), Color.Blue, false);
+            AppendText(String.Format(" Local: {0}", appDataLocalDir), Color.Blue);
             AppendText("------------------------------------------------------", Color.Blue);
         }
     }

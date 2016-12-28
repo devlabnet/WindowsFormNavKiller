@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupChrome = new System.Windows.Forms.GroupBox();
             this.clearChrome = new System.Windows.Forms.CheckBox();
             this.killChrome = new System.Windows.Forms.Button();
@@ -41,54 +41,34 @@
             this.textBox = new System.Windows.Forms.RichTextBox();
             this.recycleBinBox = new System.Windows.Forms.GroupBox();
             this.emptyBin = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.groupChrome.SuspendLayout();
             this.groupFireFox.SuspendLayout();
             this.groupEdge.SuspendLayout();
             this.recycleBinBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.BackgroundImage = global::WindowsFormNavKiller.Properties.Resources.Devil;
-            this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(150, 150);
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
             // 
             // groupChrome
             // 
             this.groupChrome.Controls.Add(this.clearChrome);
             this.groupChrome.Controls.Add(this.killChrome);
-            this.groupChrome.Location = new System.Drawing.Point(182, 12);
+            resources.ApplyResources(this.groupChrome, "groupChrome");
             this.groupChrome.Name = "groupChrome";
-            this.groupChrome.Size = new System.Drawing.Size(208, 46);
-            this.groupChrome.TabIndex = 3;
             this.groupChrome.TabStop = false;
-            this.groupChrome.Text = "Chrome";
             // 
             // clearChrome
             // 
-            this.clearChrome.AutoSize = true;
+            resources.ApplyResources(this.clearChrome, "clearChrome");
             this.clearChrome.Checked = true;
             this.clearChrome.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.clearChrome.Location = new System.Drawing.Point(18, 19);
             this.clearChrome.Name = "clearChrome";
-            this.clearChrome.Size = new System.Drawing.Size(84, 17);
-            this.clearChrome.TabIndex = 1;
-            this.clearChrome.Text = "Clear Cache";
             this.clearChrome.UseVisualStyleBackColor = true;
             // 
             // killChrome
             // 
-            this.killChrome.Location = new System.Drawing.Point(110, 16);
+            resources.ApplyResources(this.killChrome, "killChrome");
             this.killChrome.Name = "killChrome";
-            this.killChrome.Size = new System.Drawing.Size(75, 23);
-            this.killChrome.TabIndex = 0;
-            this.killChrome.Text = "KILL";
             this.killChrome.UseVisualStyleBackColor = true;
             this.killChrome.Click += new System.EventHandler(this.killChrome_Click);
             // 
@@ -96,32 +76,22 @@
             // 
             this.groupFireFox.Controls.Add(this.clearFireFox);
             this.groupFireFox.Controls.Add(this.killFireFox);
-            this.groupFireFox.Location = new System.Drawing.Point(182, 64);
+            resources.ApplyResources(this.groupFireFox, "groupFireFox");
             this.groupFireFox.Name = "groupFireFox";
-            this.groupFireFox.Size = new System.Drawing.Size(208, 46);
-            this.groupFireFox.TabIndex = 4;
             this.groupFireFox.TabStop = false;
-            this.groupFireFox.Text = "Firefox";
             // 
             // clearFireFox
             // 
-            this.clearFireFox.AutoSize = true;
+            resources.ApplyResources(this.clearFireFox, "clearFireFox");
             this.clearFireFox.Checked = true;
             this.clearFireFox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.clearFireFox.Location = new System.Drawing.Point(18, 19);
             this.clearFireFox.Name = "clearFireFox";
-            this.clearFireFox.Size = new System.Drawing.Size(84, 17);
-            this.clearFireFox.TabIndex = 1;
-            this.clearFireFox.Text = "Clear Cache";
             this.clearFireFox.UseVisualStyleBackColor = true;
             // 
             // killFireFox
             // 
-            this.killFireFox.Location = new System.Drawing.Point(110, 16);
+            resources.ApplyResources(this.killFireFox, "killFireFox");
             this.killFireFox.Name = "killFireFox";
-            this.killFireFox.Size = new System.Drawing.Size(75, 23);
-            this.killFireFox.TabIndex = 0;
-            this.killFireFox.Text = "KILL";
             this.killFireFox.UseVisualStyleBackColor = true;
             this.killFireFox.Click += new System.EventHandler(this.killFireFox_Click);
             // 
@@ -129,85 +99,71 @@
             // 
             this.groupEdge.Controls.Add(this.clearEdge);
             this.groupEdge.Controls.Add(this.killEdge);
-            this.groupEdge.Location = new System.Drawing.Point(182, 116);
+            resources.ApplyResources(this.groupEdge, "groupEdge");
             this.groupEdge.Name = "groupEdge";
-            this.groupEdge.Size = new System.Drawing.Size(208, 46);
-            this.groupEdge.TabIndex = 4;
             this.groupEdge.TabStop = false;
-            this.groupEdge.Text = "Microsoft Edge";
             // 
             // clearEdge
             // 
-            this.clearEdge.AutoSize = true;
+            resources.ApplyResources(this.clearEdge, "clearEdge");
             this.clearEdge.Checked = true;
             this.clearEdge.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.clearEdge.Location = new System.Drawing.Point(18, 19);
             this.clearEdge.Name = "clearEdge";
-            this.clearEdge.Size = new System.Drawing.Size(84, 17);
-            this.clearEdge.TabIndex = 1;
-            this.clearEdge.Text = "Clear Cache";
             this.clearEdge.UseVisualStyleBackColor = true;
             // 
             // killEdge
             // 
-            this.killEdge.Location = new System.Drawing.Point(110, 16);
+            resources.ApplyResources(this.killEdge, "killEdge");
             this.killEdge.Name = "killEdge";
-            this.killEdge.Size = new System.Drawing.Size(75, 23);
-            this.killEdge.TabIndex = 0;
-            this.killEdge.Text = "KILL";
             this.killEdge.UseVisualStyleBackColor = true;
             this.killEdge.Click += new System.EventHandler(this.killEdge_Click);
             // 
             // textBox
             // 
-            this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox.Location = new System.Drawing.Point(14, 218);
+            resources.ApplyResources(this.textBox, "textBox");
             this.textBox.Name = "textBox";
             this.textBox.ReadOnly = true;
-            this.textBox.Size = new System.Drawing.Size(378, 141);
-            this.textBox.TabIndex = 5;
-            this.textBox.Text = "";
             this.textBox.DoubleClick += new System.EventHandler(this.textBox_DoubleClick);
             // 
             // recycleBinBox
             // 
             this.recycleBinBox.Controls.Add(this.emptyBin);
-            this.recycleBinBox.Location = new System.Drawing.Point(14, 169);
+            resources.ApplyResources(this.recycleBinBox, "recycleBinBox");
             this.recycleBinBox.Name = "recycleBinBox";
-            this.recycleBinBox.Size = new System.Drawing.Size(378, 43);
-            this.recycleBinBox.TabIndex = 6;
             this.recycleBinBox.TabStop = false;
-            this.recycleBinBox.Text = "Recycle Bin";
             // 
             // emptyBin
             // 
-            this.emptyBin.AutoSize = true;
+            resources.ApplyResources(this.emptyBin, "emptyBin");
             this.emptyBin.Checked = true;
             this.emptyBin.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.emptyBin.Location = new System.Drawing.Point(130, 17);
             this.emptyBin.Name = "emptyBin";
-            this.emptyBin.Size = new System.Drawing.Size(118, 17);
-            this.emptyBin.TabIndex = 0;
             this.emptyBin.TabStop = false;
-            this.emptyBin.Text = "Empty Recycle Box";
             this.emptyBin.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.BackgroundImage = global::WindowsFormNavKiller.Properties.Resources.Devil;
+            resources.ApplyResources(this.pictureBox, "pictureBox");
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 371);
             this.Controls.Add(this.recycleBinBox);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.groupEdge);
             this.Controls.Add(this.groupFireFox);
             this.Controls.Add(this.groupChrome);
             this.Controls.Add(this.pictureBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Navigator Killer";
             this.TopMost = true;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.groupChrome.ResumeLayout(false);
             this.groupChrome.PerformLayout();
             this.groupFireFox.ResumeLayout(false);
@@ -216,6 +172,7 @@
             this.groupEdge.PerformLayout();
             this.recycleBinBox.ResumeLayout(false);
             this.recycleBinBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
