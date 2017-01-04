@@ -523,8 +523,11 @@ namespace WindowsFormNavKiller
             this.Controls.Clear();
             this.InitializeComponent();
             initializeMe();
-            warn.Close();
-            warn = null;
+            if (warn != null)
+            {
+                warn.Close();
+                warn = null;
+            }
         }
 
         private void eToolStripMenuItem_Click(object sender, EventArgs e)
@@ -534,7 +537,11 @@ namespace WindowsFormNavKiller
             this.Controls.Clear();
             this.InitializeComponent();
             initializeMe();
-
+            if (warn != null)
+            {
+                warn.Close();
+                warn = null;
+            }
         }
 
         private void goToWebSiteToolStripMenuItem_Click(object sender, EventArgs e)
