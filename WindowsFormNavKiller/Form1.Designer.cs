@@ -41,11 +41,18 @@
             this.textBox = new System.Windows.Forms.RichTextBox();
             this.recycleBinBox = new System.Windows.Forms.GroupBox();
             this.emptyBin = new System.Windows.Forms.CheckBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.fToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.goToWebSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupChrome.SuspendLayout();
             this.groupFireFox.SuspendLayout();
             this.groupEdge.SuspendLayout();
             this.recycleBinBox.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,11 +142,32 @@
             // emptyBin
             // 
             resources.ApplyResources(this.emptyBin, "emptyBin");
-            this.emptyBin.Checked = true;
-            this.emptyBin.CheckState = System.Windows.Forms.CheckState.Checked;
             this.emptyBin.Name = "emptyBin";
             this.emptyBin.TabStop = false;
             this.emptyBin.UseVisualStyleBackColor = true;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.languageToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Name = "menuStrip1";
+            // 
+            // languageToolStripMenuItem
+            // 
+            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fToolStripMenuItem,
+            this.eToolStripMenuItem});
+            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.goToWebSiteToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             // 
             // pictureBox
             // 
@@ -148,6 +176,27 @@
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.TabStop = false;
+            // 
+            // fToolStripMenuItem
+            // 
+            this.fToolStripMenuItem.Image = global::WindowsFormNavKiller.Properties.Resources.France_Flag;
+            this.fToolStripMenuItem.Name = "fToolStripMenuItem";
+            resources.ApplyResources(this.fToolStripMenuItem, "fToolStripMenuItem");
+            this.fToolStripMenuItem.Click += new System.EventHandler(this.fToolStripMenuItem_Click);
+            // 
+            // eToolStripMenuItem
+            // 
+            this.eToolStripMenuItem.Image = global::WindowsFormNavKiller.Properties.Resources.United_States_Flag;
+            this.eToolStripMenuItem.Name = "eToolStripMenuItem";
+            resources.ApplyResources(this.eToolStripMenuItem, "eToolStripMenuItem");
+            this.eToolStripMenuItem.Click += new System.EventHandler(this.eToolStripMenuItem_Click);
+            // 
+            // goToWebSiteToolStripMenuItem
+            // 
+            this.goToWebSiteToolStripMenuItem.Image = global::WindowsFormNavKiller.Properties.Resources.support;
+            this.goToWebSiteToolStripMenuItem.Name = "goToWebSiteToolStripMenuItem";
+            resources.ApplyResources(this.goToWebSiteToolStripMenuItem, "goToWebSiteToolStripMenuItem");
+            this.goToWebSiteToolStripMenuItem.Click += new System.EventHandler(this.goToWebSiteToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -159,11 +208,14 @@
             this.Controls.Add(this.groupFireFox);
             this.Controls.Add(this.groupChrome);
             this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupChrome.ResumeLayout(false);
             this.groupChrome.PerformLayout();
             this.groupFireFox.ResumeLayout(false);
@@ -172,8 +224,11 @@
             this.groupEdge.PerformLayout();
             this.recycleBinBox.ResumeLayout(false);
             this.recycleBinBox.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -192,6 +247,12 @@
         private System.Windows.Forms.RichTextBox textBox;
         private System.Windows.Forms.GroupBox recycleBinBox;
         private System.Windows.Forms.CheckBox emptyBin;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem goToWebSiteToolStripMenuItem;
     }
 }
 

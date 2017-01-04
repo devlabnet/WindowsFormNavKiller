@@ -142,6 +142,15 @@ namespace WindowsFormNavKiller {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Process Not Running ....
+        /// </summary>
+        internal static string procNotFound {
+            get {
+                return ResourceManager.GetString("procNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Empty the RecycleBin failed.
         /// </summary>
         internal static string RBCleanBadStr {

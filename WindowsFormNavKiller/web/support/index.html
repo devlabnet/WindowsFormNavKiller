@@ -1,0 +1,578 @@
+﻿<HTML>
+   <HEAD>
+      <TITLE>Windows Navigator Killer</TITLE>
+      <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8" />
+      <STYLE TYPE="text/css">
+         <!--
+            BODY {
+            	margin-top: 20px;
+            	margin-left: 20px;
+            	margin-right: 20px;
+            	color: #000000;
+            	font-family: Tahoma;
+            	background-color: white
+            }
+            
+            A:link {
+            	font-weight: normal;
+            	color: #000066;
+            	text-decoration: none
+            }
+            
+            A:visited {
+            	font-weight: normal;
+            	color: #000066;
+            	text-decoration: none
+            }
+            
+            A:active {
+            	font-weight: normal;
+            	text-decoration: none
+            }
+            
+            A:hover {
+            	font-weight: normal;
+            	color: #FF6600;
+            	text-decoration: none
+            }
+            
+            P {
+            	margin-top: 0px;
+            	margin-bottom: 12px;
+            	color: #000000;
+            	font-family: Tahoma
+            }
+            
+            PRE {
+            	border-right: #f0f0e0 1px solid;
+            	padding-right: 5px;
+            	border-top: #f0f0e0 1px solid;
+            	margin-top: -5px;
+            	padding-left: 5px;
+            	font-size: x-small;
+            	padding-bottom: 5px;
+            	border-left: #f0f0e0 1px solid;
+            	padding-top: 5px;
+            	border-bottom: #f0f0e0 1px solid;
+            	font-family: Courier New;
+            	background-color: #e5e5cc
+            }
+            
+            TD {
+            	font-size: 12px;
+            	color: #000000;
+            	font-family: Tahoma
+            }
+            
+            H2 {
+            	border-top: #003366 1px solid;
+            	margin-top: 25px;
+            	font-weight: bold;
+            	font-size: 1.5em;
+            	margin-bottom: 10px;
+            	margin-left: -15px;
+            	color: #003366
+            }
+            
+            H3 {
+            	margin-top: 10px;
+            	font-size: 1.1em;
+            	margin-bottom: 10px;
+            	margin-left: -15px;
+            	color: #000000
+            }
+            
+            UL {
+            	margin-top: 4px;
+            	margin-left: 20px
+            }
+            
+            LI {
+            	margin-top: 4px;
+            	color: #000000
+            }
+            
+            OL {
+            	margin-top: 4px;
+            	margin-left: 5px
+            }
+            
+            OL LI {
+            	margin-top: 3px;
+            	color: #000000
+            }
+            
+            FONT.value {
+            	font-weight: bold;
+            	color: darkblue
+            }
+            
+            FONT.key {
+            	font-weight: bold;
+            	color: darkgreen
+            }
+            
+            .divTag {
+            	border: 1px;
+            	border-style: solid;
+            	background-color: #FFFFFF;
+            	text-decoration: none;
+            	height: auto;
+            	width: auto;
+            	background-color: #cecece
+            }
+            
+            .BannerColumn {
+            	background-color: #000000
+            }
+            
+            .Banner {
+            	border: 0;
+            	padding: 0;
+            	height: 8px;
+            	margin-top: 0px;
+            	color: #ffffff;
+            	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1,
+            		StartColorStr='#1c5280', EndColorStr='#FFFFFF');
+            }
+            
+            .BannerTextCompany {
+            	font: bold;
+            	font-size: 18pt;
+            	color: #cecece;
+            	font-family: Tahoma;
+            	height: 0px;
+            	margin-top: 0;
+            	margin-left: 8px;
+            	margin-bottom: 0;
+            	padding: 0px;
+            	white-space: nowrap;
+            	filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2,
+            		Color='black', Positive='true');
+            }
+            
+            .BannerTextApplication {
+            	font: bold;
+            	font-size: 18pt;
+            	font-family: Tahoma;
+            	height: 0px;
+            	margin-top: 0;
+            	margin-left: 8px;
+            	margin-bottom: 0;
+            	padding: 0px;
+            	white-space: nowrap;
+            	filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2,
+            		Color='black', Positive='true');
+            }
+            
+            .BannerText {
+            	font: bold;
+            	font-size: 18pt;
+            	font-family: Tahoma;
+            	height: 0px;
+            	margin-top: 0;
+            	margin-left: 8px;
+            	margin-bottom: 0;
+            	padding: 0px;
+            	filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2,
+            		Color='black', Positive='true');
+            }
+            
+            .BannerSubhead {
+            	border: 0;
+            	padding: 0;
+            	height: 16px;
+            	margin-top: 0px;
+            	margin-left: 10px;
+            	color: #ffffff;
+            	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1,
+            		StartColorStr='#4B3E1A', EndColorStr='#FFFFFF');
+            }
+            
+            .BannerSubheadText {
+            	font: bold;
+            	height: 11px;
+            	font-size: 11px;
+            	font-family: Tahoma;
+            	margin-top: 1;
+            	margin-left: 10;
+            	filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2,
+            		Color='black', Positive='true');
+            }
+            
+            .FooterRule {
+            	border: 0;
+            	padding: 0;
+            	height: 1px;
+            	margin: 0px;
+            	color: #ffffff;
+            	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1,
+            		StartColorStr='#4B3E1A', EndColorStr='#FFFFFF');
+            }
+            
+            .FooterText {
+            	font-size: 11px;
+            	font-weight: normal;
+            	text-decoration: none;
+            	font-family: Tahoma;
+            	margin-top: 10;
+            	margin-left: 0px;
+            	margin-bottom: 2;
+            	padding: 0px;
+            	color: #999999;
+            	white-space: nowrap
+            }
+            
+            .FooterText A:link {
+            	font-weight: normal;
+            	color: #999999;
+            	text-decoration: underline
+            }
+            
+            .FooterText A:visited {
+            	font-weight: normal;
+            	color: #999999;
+            	text-decoration: underline
+            }
+            
+            .FooterText A:active {
+            	font-weight: normal;
+            	color: #999999;
+            	text-decoration: underline
+            }
+            
+            .FooterText A:hover {
+            	font-weight: normal;
+            	color: #FF6600;
+            	text-decoration: underline
+            }
+            
+            .ClickOnceInfoText {
+            	font-size: 11px;
+            	font-weight: normal;
+            	text-decoration: none;
+            	font-family: Tahoma;
+            	margin-top: 0;
+            	margin-right: 2px;
+            	margin-bottom: 0;
+            	padding: 0px;
+            	color: #000000
+            }
+            
+            .InstallTextStyle {
+            	font: bold;
+            	font-size: 14pt;
+            	font-family: Tahoma;
+            	a: #FF0000;
+            	text-decoration: None
+            }
+            
+            .DetailsStyle {
+            	margin-left: 30px
+            }
+            
+            .ItemStyle {
+            	margin-left: -15px;
+            	font-weight: bold
+            }
+            
+            .StartColorStr {
+            	background-color: #4B3E1A
+            }
+            
+            .JustThisApp A:link {
+            	font-weight: normal;
+            	color: #000066;
+            	text-decoration: underline
+            }
+            
+            .JustThisApp A:visited {
+            	font-weight: normal;
+            	color: #000066;
+            	text-decoration: underline
+            }
+            
+            .JustThisApp A:active {
+            	font-weight: normal;
+            	text-decoration: underline
+            }
+            
+            .JustThisApp A:hover {
+            	font-weight: normal;
+            	color: #FF6600;
+            	text-decoration: underline
+            }
+            -->
+      </STYLE>
+   </HEAD>
+   <BODY>
+      <TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="2" BORDER="0">
+         <!-- Begin Banner -->
+         <TR>
+            <TD>
+               <TABLE CELLPADDING="2" CELLSPACING="0" BORDER="0" BGCOLOR="#cecece" WIDTH="100%">
+                  <TR>
+                     <TD>
+                        <TABLE BGCOLOR="#1c5280" WIDTH="100%" CELLPADDING="0"
+                           CELLSPACING="0" BORDER="0">
+                           <TR>
+                              <TD CLASS="Banner" />
+                           </TR>
+                           <TR>
+                              <TD CLASS="Banner"><SPAN CLASS="BannerTextCompany">DevLabNet</SPAN></TD>
+                           </TR>
+                           <TR>
+                              <TD CLASS="Banner"><SPAN CLASS="BannerTextApplication">Windows
+                                 Navigator Killer</SPAN>
+                              </TD>
+                           </TR>
+                           <TR>
+                              <TD CLASS="Banner" ALIGN="RIGHT" />
+                           </TR>
+                        </TABLE>
+                     </TD>
+                  </TR>
+               </TABLE>
+            </TD>
+         </TR>
+         <!-- End Banner -->
+         <!-- Begin Dialog -->
+         <TR>
+            <TD ALIGN="LEFT">
+               <TABLE CELLPADDING="2" CELLSPACING="0"	BORDER="0" WIDTH="680">
+                  <TR>
+                     <TD WIDTH="496">
+                        <!-- Begin AppInfo -->
+                        <TABLE>
+                           <TR>
+                              <TD><B>Name:</B></TD>
+                              <TD WIDTH="5">
+                                 <SPACER TYPE="block" WIDTH="10" />
+                              </TD>
+                              <TD>Windows Navigator Killer</TD>
+                           </TR>
+                           <TR>
+                              <TD><B>Version:</B></TD>
+                              <TD WIDTH="5">
+                                 <SPACER TYPE="block" WIDTH="10" />
+                              </TD>
+                              <TD>1.0.0.0</TD>
+                           </TR>
+                           <TR>
+                              <TD><B>Publisher:</B></TD>
+                              <TD WIDTH="5">
+                                 <SPACER TYPE="block" WIDTH="10" />
+                              </TD>
+                              <TD>DevLabNet</TD>
+                           </TR>
+                        </TABLE>
+                        <!-- End AppInfo --> <!-- Begin Prerequisites -->
+                        
+						<table border="0" style=" margin-top: 10px;">
+							<TR>
+								<TD COLSPAN="2"><b>INFORMATION:</b></TD>
+							</TR>
+							<TR>
+								<TD WIDTH="10">&nbsp;</TD>
+								<TD>
+									<p style="font-size: 14pt;font-family: Trebuchet MS, Verdana, Helvetica, sans-serif;
+										color: black; border: 1px black solid; border-radius: 5px;
+										margin: 5px; padding: 5px; background-color: orangered;
+										text-align: center;">
+										"virus" warning popped up? Don't call that number! Don't get scammed!
+									</p> 
+									Whether you have a Windows computer or a Macintosh, this could happen to you. 
+									<br> 
+									<b>How it starts</b> 
+									<br> You're using your computer when out of the
+									blue a "virus" or "infection" or "suspicious connection"
+									warning pops up on your screen. It will probably use a variety
+									of technical-sounding phrases to tell you that there's a
+									problems, and that you are at risk for all kinds of scary
+									consequences ("computer damage," "data corruption", etc.). You
+									might see multiple pop-ups. At the end of this text there is a
+									phone number you can call to get help.<br> <br> In
+									addition you may see a "blue screen" or other colorful text
+									and images, claiming there is a problem with your computer. <br>
+									You may also hear a man's or woman's voice coming from your
+									computer, telling you that this is urgent, call immediately,
+									you are at risk, etc. Or you might hear a siren noise. <br>
+									<span style="color: #ff0000;"> <b>Don't believe it!</b>
+								</span> This is a scam, pure and simple. These messages and sounds are
+									all designed to scare you, make you leave your common sense
+									aside, and intimidate you into calling that number. <br>
+									The message on your screen will probably have an "OK" button
+									that, when you click it, closes and then immediately reopens
+									the alert, making you feel trapped, and reinforcing the
+									illusion that you have only one option, to call that number. <br>
+									<span style="color: #ff0000;"> <b>Don't fall for this!</b>
+								</span> Just because it says there's a problem on your computer screen
+									doesn't make it true.<br></TD>
+							</TR>
+						</TABLE>
+                        
+						<table border="0" style=" margin-top: 10px;">
+                          <TR>
+                              <TD COLSPAN="2"><B>PURPOSE OF THE APPLICATION:</B></TD>
+                           </TR>
+                           <TR>
+                              <TD WIDTH="10">&nbsp;</TD>
+                              <TD>
+                                 <UL>
+                                    <LI>This "Windows Navigator Killer" will allows to kill
+                                       "Navigator Processes" through a graphical interface.
+                                    </LI>
+                                    <LI>Who never got this kind of terrific page : <BR>
+                                       <BR> <IMG ALT="capture" SRC="Capture_web.jpg"
+                                          STYLE="width: 80%;">
+                                       <BR>
+                                       <BR> Asking you to call some phone number, and .... As
+                                       you can see, this program was created for the sole purpose
+                                       of displaying fake Windows alerts in order to scare you into
+                                       purchasing remote support services.
+                                    </LI>
+                                    <LI STYLE="font-weight: bold; color: tomato;">If you are
+                                       infected with this program, please ignore any alerts that
+                                       are displayed and do not call the displayed number.
+                                    </LI>
+                                    <LI STYLE="font-weight: bold;">Most of the time, these
+                                       pop-ups will not allow you to close your browser.
+                                    </LI>
+                                    The only
+                                    way to stop this, will be to "KILL" the process of your
+                                    running Navigator (Edge, Chrome or Edge).
+                                    <LI STYLE="font-style: italic; font-weight: normal;">
+                                       The Standard way to do this is to :
+                                    </LI>
+                                    <OL STYLE="font-style: italic; font-weight: normal;">
+                                       <LI>Open Task Manager by right-clicking the taskbar,
+                                          and then clicking <STRONG>Start Task Manager</STRONG>.
+                                          Alternatively to start the Windows Task Manager, you can
+                                          press <STRONG>Ctrl+Alt+Del</STRONG> and click on <STRONG>Task
+                                          Manager</STRONG> or simply press on <STRONG>Ctrl+Shift+Esc</STRONG>.
+                                       </LI>
+                                       <LI>Scroll through the list till you see your web
+                                          browser’s process and left-click on it once so it becomes
+                                          highlighted. Once you have selected the browser’s process,
+                                          click on the <STRONG>End Task</STRONG>&nbsp;button.
+                                       </LI>
+                                       <LI>Your browser window should now be closed. The next
+                                          time you open your browser, do not allow the browser to
+                                          open the last opened page.
+                                       </LI>
+                                    </OL>
+                                    <LI STYLE="font-weight: bold;">But this is sometime not
+                                       easy to understand for people not really aware with
+                                       Computers !. <BR> <SPAN STYLE="font-style: italic; color: blueviolet;">The
+                                       goal of this Application is to automate the "kiling" process
+                                       via a Graphical Interface Program.</SPAN>
+                                    </LI>
+                                 </UL>
+                              </TD>
+                           </TR>
+                        </TABLE>
+
+						<TABLE border="0" style=" margin-top: 10px;">
+                           <TR>
+                              <TD COLSPAN="2"><B>INSTALLATION / HOW IT WORKS:</B></TD>
+                           </TR>
+                           <TR>
+                              <TD WIDTH="10">&nbsp;</TD>
+                              <TD>
+                                 <UL>
+                                    <LI>Just Install the program from this link : 
+                                    <A HREF="http://devlabnet.eu/softdev/visual/navkill"
+                                       STYLE="font-weight: bold; color: tomato;">"Navigator
+                                       Killer"</A>.
+                                    </LI>
+                                    <LI>After Installation, you will get a new program with
+                                       tis icon : <BR> To Use it, just run It, you will get a
+                                       "Application Window" like this : <BR>
+                                       <BR> <IMG ALT="capture" SRC="appli_web.jpg"
+                                          STYLE="width: 60%;"> 
+                                          <BR><BR>
+                                    </LI>
+                                    <LI STYLE="font-weight: bold;">Then, just click on the
+                                       "KILL" Button, to Kill/Close the wanted Navigator.
+                                    </LI>
+                                    <LI STYLE="font-weight: bold;">The following options can
+                                       be selected by checking the checkboxes :
+                                    </LI>
+                                    <OL STYLE="font-style: italic; font-weight: normal;">
+                                       <LI><STRONG>Clear Cache : </STRONG> 
+                                       Will Clear the Cache / History of the browser.
+                                       </LI>
+                                       <LI><STRONG>Empty Recycle Bin : </STRONG>
+                                          Will Clean Out the Recycle Bin.
+                                       </LI>
+                                       <br>
+                                    </OL>
+                                    <LI STYLE="font-weight: bold; color: blue;">Clicking the "KILL" button will
+                                       "Close" the corresponding Navigator, "Empty" the Recycle Bin if
+                                       specified, and clean the "browsing Data Session Information"
+                                       to avoid the navigator to display a warning asking :
+                                       <SPAN STYLE="font-style: italic; color: darkgrey">"Do
+                                       You want to Restore the Pages"</SPAN> when it will be restarted. <BR>
+                                    </LI>
+                                 </UL>
+                              </TD>
+                           </TR>
+                        </TABLE>
+                       	<TABLE border="0" style=" margin-top: 10px;">
+                           <TR>
+                              <TD COLSPAN="2"><B>ENJOY IT !:</B></TD>
+                           </TR>
+                           <TR>
+                              	<TD WIDTH="10">&nbsp;</TD>
+                              	<TD>
+                              	If you like this program, Please visit my webpage to have a look at the other available softwares.
+                              	<br>
+                              	All software source codes are available under GITHUB.
+                              	<br>
+                              	BUTTON
+	                        	</TD>
+                        </TR>
+                        </TABLE>
+                     </TD>
+                  </TR>
+               </TABLE>
+               <!-- Begin Buttons -->
+            </TD>
+         </TR>
+         <!-- End Dialog -->
+         <!-- Spacer Row -->
+         <TR>
+            <TD>
+               <!-- Begin Footer -->
+               <TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="0" BORDER="0"
+                  BGCOLOR="#ffffff">
+                  <TR>
+                     <TD HEIGHT="5">
+                        <SPACER TYPE="block" HEIGHT="5" />
+                     </TD>
+                  </TR>
+                  <TR>
+                     <TD CLASS="FooterText" ALIGN="center"><A
+                        HREF="http://devlabnet.eu/softdev/visual/navkill/support">DevLabNet
+                        Customer Support</A> &nbsp;&nbsp;&nbsp;::&nbsp;&nbsp;&nbsp; <A
+                           HREF="http://go.microsoft.com/fwlink/?LinkId=154571">ClickOnce
+                        and .NET Framework Resources</A>
+                     </TD>
+                  </TR>
+                  <TR>
+                     <TD HEIGHT="5">
+                        <SPACER TYPE="block" HEIGHT="5" />
+                     </TD>
+                  </TR>
+                  <TR>
+                     <TD HEIGHT="1" BGCOLOR="#cecece">
+                        <SPACER TYPE="block" HEIGHT="1" />
+                     </TD>
+                  </TR>
+               </TABLE>
+               <!-- End Footer -->
+            </TD>
+         </TR>
+      </TABLE>
+   </BODY>
+</HTML>
