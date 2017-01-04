@@ -43,11 +43,11 @@
             this.emptyBin = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.fToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.goToWebSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.groupChrome.SuspendLayout();
             this.groupFireFox.SuspendLayout();
             this.groupEdge.SuspendLayout();
@@ -162,21 +162,6 @@
             this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
             resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
             // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.goToWebSiteToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.BackgroundImage = global::WindowsFormNavKiller.Properties.Resources.Devil;
-            resources.ApplyResources(this.pictureBox, "pictureBox");
-            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.TabStop = false;
-            // 
             // fToolStripMenuItem
             // 
             this.fToolStripMenuItem.Image = global::WindowsFormNavKiller.Properties.Resources.France_Flag;
@@ -191,12 +176,28 @@
             resources.ApplyResources(this.eToolStripMenuItem, "eToolStripMenuItem");
             this.eToolStripMenuItem.Click += new System.EventHandler(this.eToolStripMenuItem_Click);
             // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.goToWebSiteToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
+            // 
             // goToWebSiteToolStripMenuItem
             // 
             this.goToWebSiteToolStripMenuItem.Image = global::WindowsFormNavKiller.Properties.Resources.support;
             this.goToWebSiteToolStripMenuItem.Name = "goToWebSiteToolStripMenuItem";
             resources.ApplyResources(this.goToWebSiteToolStripMenuItem, "goToWebSiteToolStripMenuItem");
             this.goToWebSiteToolStripMenuItem.Click += new System.EventHandler(this.goToWebSiteToolStripMenuItem_Click);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.BackgroundImage = global::WindowsFormNavKiller.Properties.Resources.Devil;
+            resources.ApplyResources(this.pictureBox, "pictureBox");
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // Form1
             // 

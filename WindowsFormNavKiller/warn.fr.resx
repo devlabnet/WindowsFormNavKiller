@@ -117,55 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="appDataStr" xml:space="preserve">
-    <value>AppData Directory</value>
-  </data>
-  <data name="clearCacheStr" xml:space="preserve">
-    <value>Cleaning Cache for</value>
-  </data>
-  <data name="clearSessionDataStr" xml:space="preserve">
-    <value>Cleaning Session Data for</value>
-  </data>
-  <data name="delDirStr" xml:space="preserve">
-    <value>Delete Directory: </value>
-  </data>
-  <data name="delFileStr" xml:space="preserve">
-    <value>Delete file: </value>
-  </data>
-  <data name="dirDelStr" xml:space="preserve">
-    <value>Directories Deleted</value>
-  </data>
-  <data name="doneStr" xml:space="preserve">
-    <value>Done</value>
-  </data>
-  <data name="fileDelStr" xml:space="preserve">
-    <value>Files Deleted</value>
-  </data>
-  <data name="killStr" xml:space="preserve">
-    <value>Kill Program</value>
-  </data>
-  <data name="RBCleanBadStr" xml:space="preserve">
-    <value>Empty the RecycleBin failed</value>
-  </data>
-  <data name="RBCleanBtnStr" xml:space="preserve">
-    <value>Empty Recycle bin</value>
-  </data>
-  <data name="RBCleanOkStr" xml:space="preserve">
-    <value>Empty the RecycleBin successsfully</value>
-  </data>
-  <data name="RBCleanStr" xml:space="preserve">
-    <value>Are you sure to delete all items in recycle bin</value>
-  </data>
-  <data name="recycleBinCountStr" xml:space="preserve">
-    <value>Recycle Bin Count</value>
-  </data>
-  <data name="UserName" xml:space="preserve">
-    <value>UserName</value>
-  </data>
-  <data name="procNotFound" xml:space="preserve">
-    <value>Process Not Running ...</value>
-  </data>
-  <data name="UnableOpenSite" xml:space="preserve">
-    <value>Unable to open download site for : </value>
+  <data name="warnLabel.Text" xml:space="preserve">
+    <value>Si vous avez été amené à utiliser WindowsNavKiller, c'est probablement parce que votre PC est infecté avec un potentiel programme ou autre Publiciel.
+Il est fortement recommendé de nettoyer votre PC avec un logiciel pour combattre les pirates de navigateurs tel que :</value>
   </data>
 </root>

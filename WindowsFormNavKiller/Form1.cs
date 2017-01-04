@@ -14,9 +14,11 @@ namespace WindowsFormNavKiller
     {
         private int fileDeleted;
         private int dirDeleted;
-        string appDataLocalDir;
-        string appDataDir;
-        ResourceManager LocRM;
+        private string appDataLocalDir;
+        private string appDataDir;
+        private ResourceManager LocRM;
+        private bool showEx = false;
+        private warnForm warn = null;
 
         enum RecycleFlags : int
         {
@@ -49,25 +51,42 @@ namespace WindowsFormNavKiller
             initializeMe();
         }
 
-        private void initializeMe()
+        private void initializeMe(bool clearBox = true)
         {
             pictureBox.Focus();
             pictureBox.Select();
-            //Process[] proc = Process.GetProcessesByName("chrome");
-            //if (proc.Length > 0)
-            //{
-            //    oneNavDetected = true;
-            //}
-            //proc = Process.GetProcessesByName("firefox");
-            //if (proc.Length > 0)
-            //{
-            //    oneNavDetected = true;
-            //}
-            //proc = Process.GetProcessesByName("MicrosoftEdge");
-            //if (proc.Length > 0)
-            //{
-            //    oneNavDetected = true;
-            //}
+            Process[] proc = Process.GetProcessesByName("chrome");
+            if (proc.Length > 0)
+            {
+                //oneNavDetected = true;
+                groupChrome.Enabled = true;
+            }
+            else
+            {
+                groupChrome.Enabled = false;
+            }
+            proc = Process.GetProcessesByName("firefox");
+            if (proc.Length > 0)
+            {
+                //oneNavDetected = true;
+                groupFireFox.Enabled = true;
+            }
+            else
+            {
+                groupFireFox.Enabled = false;
+            }
+            proc = Process.GetProcessesByName("MicrosoftEdge");
+            if (proc.Length > 0)
+            {
+                //oneNavDetected = true;
+                groupEdge.Enabled = true;
+            }
+            else
+            {
+                groupEdge.Enabled = false;
+            }
+            if (clearBox == false) return;
+            hideWarn();
             textBox.Clear();
             //if ((rbc == 0) || (oneNavDetected == false))
             //if (rbc == 0)
@@ -91,6 +110,41 @@ namespace WindowsFormNavKiller
             string recycleBinCountStr = LocRM.GetString("recycleBinCountStr");
             AppendText(string.Format(recycleBinCountStr + ": {0}", rbc), Color.Blue);
             AppendText("------------------------------------------------------", Color.Blue);
+        }
+
+        private void showWarn()
+        {
+            if (warn == null)
+            {
+                warn = new warnForm(LocRM);
+                warn.FormClosed += (sender2, e2) => { warn = null; };
+
+                warn.StartPosition = FormStartPosition.Manual;
+                warn.Location = new Point(Location.X + (Width - warn.Width) / 2, Location.Y + (Height - warn.Height) / 2);
+                warn.Show(this);
+               //warn.ShowDialog(this);
+            }
+            else
+            {
+                warn.Location = new Point(Location.X + (Width - warn.Width) / 2, Location.Y + (Height - warn.Height) / 2);
+                warn.Show(this);
+                warn.Focus();
+            }
+        }
+
+        private void hideWarn()
+        {
+            if (warn != null)
+            {
+                warn.Hide();
+            }
+        }
+        private void updateWarnLng()
+        {
+            if (warn != null)
+            {
+                warn.setLocRM(LocRM);
+            }
         }
 
         private int GetRecycleBinCount()
@@ -132,10 +186,13 @@ namespace WindowsFormNavKiller
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(LocRM.GetString("RBCleanBadStr") + ex.Message, LocRM.GetString("RBCleanBtnStr"), MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                            AppendText(string.Format(LocRM.GetString("RBCleanBadStr")), Color.Red);
-                            AppendText("------------------------------------------------------", Color.Green);
-                            //Application.Exit();
+                            if (showEx)
+                            {
+                                MessageBox.Show(LocRM.GetString("RBCleanBadStr") + ex.Message, LocRM.GetString("RBCleanBtnStr"), MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                                AppendText(string.Format(LocRM.GetString("RBCleanBadStr")), Color.Red);
+                                AppendText("------------------------------------------------------", Color.Green);
+                                //Application.Exit();
+                            }
                         }
                     }
 
@@ -154,6 +211,7 @@ namespace WindowsFormNavKiller
                 foreach (Process theprocess in proc)
                 {
                     theprocess.Kill();
+                    groupChrome.Enabled = false;
                 }
                 System.Threading.Thread.Sleep(100);
                 AppendText("------------------------------------------------------", Color.Green);
@@ -195,7 +253,9 @@ namespace WindowsFormNavKiller
                     AppendText("------------------------------------------------------", Color.Green);
                     emptyRecycleBin();
                 }
-            } else {
+                showWarn();
+            }
+            else {
                 AppendText(" Chrome " + LocRM.GetString("procNotFound") , Color.Orange);
                 AppendText("------------------------------------------------------", Color.Green);
             }
@@ -212,6 +272,7 @@ namespace WindowsFormNavKiller
                 foreach (Process theprocess in proc)
                 {
                     theprocess.Kill();
+                    groupFireFox.Enabled = false;
                 }
                 System.Threading.Thread.Sleep(100);
                 AppendText("------------------------------------------------------", Color.Green);
@@ -261,6 +322,7 @@ namespace WindowsFormNavKiller
                     AppendText("------------------------------------------------------", Color.Green);
                     emptyRecycleBin();
                 }
+                showWarn();
             }
             else
             {
@@ -280,6 +342,7 @@ namespace WindowsFormNavKiller
                 foreach (Process theprocess in proc)
                 {
                     theprocess.Kill();
+                    groupEdge.Enabled = false;
                 }
                 System.Threading.Thread.Sleep(100);
                 AppendText("------------------------------------------------------", Color.Green);
@@ -313,16 +376,19 @@ namespace WindowsFormNavKiller
                         }
                         catch (Exception ex)
                         {
-                            AppendText(ex.Message, Color.Maroon);
+                            if (showEx)
+                            {
+                                AppendText(ex.Message, Color.Maroon);
+                            }
                         }
                         fileDeleted++;
                     }
                     AppendText(LocRM.GetString("doneStr") + " " + LocRM.GetString("fileDelStr"), Color.Red, false);
                     AppendText(string.Format(": {0} ", fileDeleted), Color.Red);
                     AppendText("------------------------------------------------------", Color.Green);
-
+                    emptyRecycleBin();
                 }
-                emptyRecycleBin();
+                showWarn();
             }
             else
             {
@@ -340,7 +406,10 @@ namespace WindowsFormNavKiller
             }
             catch (Exception ex)
             {
-                AppendText(ex.Message, Color.Maroon);
+                if (showEx)
+                {
+                    AppendText(ex.Message, Color.Maroon);
+                }
             }
             fileDeleted++;
         }
@@ -359,7 +428,10 @@ namespace WindowsFormNavKiller
                     }
                     catch (Exception ex)
                     {
-                        AppendText(ex.Message, Color.Maroon);
+                        if (showEx)
+                        {
+                            AppendText(ex.Message, Color.Maroon);
+                        }
                     }
                     fileDeleted++;
                 }
@@ -383,7 +455,10 @@ namespace WindowsFormNavKiller
                     }
                     catch (Exception ex)
                     {
-                        AppendText(ex.Message, Color.DarkKhaki);
+                        if (showEx)
+                        {
+                            AppendText(ex.Message, Color.DarkKhaki);
+                        }
                     }
                     fileDeleted++;
                 }
@@ -397,7 +472,10 @@ namespace WindowsFormNavKiller
                     }
                     catch (Exception ex)
                     {
-                        AppendText(ex.Message, Color.Maroon);
+                        if (showEx)
+                        {
+                            AppendText(ex.Message, Color.Maroon);
+                        }
                     }
                 }
                 System.Threading.Thread.Sleep(1);
@@ -408,7 +486,10 @@ namespace WindowsFormNavKiller
                 }
                 catch (Exception ex)
                 {
-                    AppendText(ex.Message, Color.Maroon);
+                    if (showEx)
+                    {
+                        AppendText(ex.Message, Color.Maroon);
+                    }
                 }
                 dirDeleted++;
             }
@@ -435,25 +516,6 @@ namespace WindowsFormNavKiller
             initializeMe();
         }
 
-        private void btnFR_Click(object sender, EventArgs e)
-        {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
-            LocRM = new ResourceManager("WindowsFormNavKiller.WinFormStrings", typeof(Form1).Assembly);
-            this.Controls.Clear();
-            this.InitializeComponent();
-            initializeMe();
-
-        }
-
-        private void btnEN_Click(object sender, EventArgs e)
-        {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-EN");
-            LocRM = new ResourceManager("WindowsFormNavKiller.WinFormStrings", typeof(Form1).Assembly);
-            this.Controls.Clear();
-            this.InitializeComponent();
-            initializeMe();
-        }
-
         private void fToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
@@ -461,7 +523,8 @@ namespace WindowsFormNavKiller
             this.Controls.Clear();
             this.InitializeComponent();
             initializeMe();
-
+            warn.Close();
+            warn = null;
         }
 
         private void eToolStripMenuItem_Click(object sender, EventArgs e)
@@ -482,16 +545,10 @@ namespace WindowsFormNavKiller
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    _assembly = Assembly.GetEntryAssembly();
-            //    _imageStream = _assembly.GetManifestResourceStream("MyNamespace.MyImage.bmp");
-            //    _textStreamReader = new StreamReader(_assembly.GetManifestResourceStream("MyNamespace.MyTextFile.txt"));
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Error accessing resources!");
-            //}
+            //System.Windows.Forms.Timer timer1 = new System.Windows.Forms.Timer();
+            //timer1.Interval = 5000;// mili-seconds
+            //timer1.Tick += new System.EventHandler(timer1_Tick);
+            //timer1.Start();
         }
 
         //private void Form1_Load(object sender, EventArgs e)
@@ -504,9 +561,12 @@ namespace WindowsFormNavKiller
 
         //private void timer1_Tick(object sender, EventArgs e)
         //{
-        //    //do whatever you want 
-        //    initializeMe();
+        //    initializeMe(false);
         //}
 
+        private void pictureBox_Click(object sender, EventArgs e)
+        {
+            initializeMe(false);
+        }
     }
 }

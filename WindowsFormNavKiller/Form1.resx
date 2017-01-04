@@ -177,6 +177,9 @@
   <data name="&gt;&gt;killChrome.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="groupChrome.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="groupChrome.Location" type="System.Drawing.Point, System.Drawing">
     <value>182, 32</value>
   </data>
@@ -258,6 +261,9 @@
   <data name="&gt;&gt;killFireFox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="groupFireFox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="groupFireFox.Location" type="System.Drawing.Point, System.Drawing">
     <value>182, 84</value>
   </data>
@@ -338,6 +344,9 @@
   </data>
   <data name="&gt;&gt;killEdge.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="groupEdge.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="groupEdge.Location" type="System.Drawing.Point, System.Drawing">
     <value>182, 136</value>
@@ -466,7 +475,7 @@
     <value>Language</value>
   </data>
   <data name="goToWebSiteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="goToWebSiteToolStripMenuItem.Text" xml:space="preserve">
     <value>Go To WebSite</value>
@@ -777,12 +786,6 @@
   <data name="&gt;&gt;languageToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;helpToolStripMenuItem.Name" xml:space="preserve">
-    <value>helpToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;helpToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;fToolStripMenuItem.Name" xml:space="preserve">
     <value>fToolStripMenuItem</value>
   </data>
@@ -793,6 +796,12 @@
     <value>eToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;eToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;helpToolStripMenuItem.Name" xml:space="preserve">
+    <value>helpToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;helpToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;goToWebSiteToolStripMenuItem.Name" xml:space="preserve">

@@ -165,4 +165,7 @@
   <data name="procNotFound" xml:space="preserve">
     <value>Process Non trouvé ...</value>
   </data>
+  <data name="UnableOpenSite" xml:space="preserve">
+    <value>Impossible d'ouvrir le site de téléchargement pour : </value>
+  </data>
 </root>

@@ -196,6 +196,15 @@ namespace WindowsFormNavKiller {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unable to open download site for : .
+        /// </summary>
+        internal static string UnableOpenSite {
+            get {
+                return ResourceManager.GetString("UnableOpenSite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to UserName.
         /// </summary>
         internal static string UserName {
