@@ -1,4 +1,3 @@
-
 ###############################################################################
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
@@ -63,5 +62,5 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
-*.rb linguist-language=Java
+*.htm linguist-language=Java
 
