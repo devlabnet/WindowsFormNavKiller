@@ -288,36 +288,6 @@
   <data name="&gt;&gt;groupFireFox.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="clearEdge.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="clearEdge.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="clearEdge.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 19</value>
-  </data>
-  <data name="clearEdge.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 17</value>
-  </data>
-  <data name="clearEdge.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="clearEdge.Text" xml:space="preserve">
-    <value>Clear Cache</value>
-  </data>
-  <data name="&gt;&gt;clearEdge.Name" xml:space="preserve">
-    <value>clearEdge</value>
-  </data>
-  <data name="&gt;&gt;clearEdge.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clearEdge.Parent" xml:space="preserve">
-    <value>groupEdge</value>
-  </data>
-  <data name="&gt;&gt;clearEdge.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="killEdge.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -343,7 +313,7 @@
     <value>groupEdge</value>
   </data>
   <data name="&gt;&gt;killEdge.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="groupEdge.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>

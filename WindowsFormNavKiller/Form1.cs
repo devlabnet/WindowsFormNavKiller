@@ -173,13 +173,13 @@ namespace WindowsFormNavKiller
                 if (emptyBin.Checked)
                 {
                     DialogResult result;
-                    result = MessageBox.Show(LocRM.GetString("RBCleanStr"), LocRM.GetString("RBCleanBtnStr"), MessageBoxButtons.YesNo);
+                    result = MessageBox.Show(this, LocRM.GetString("RBCleanStr"), LocRM.GetString("RBCleanBtnStr"), MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
                         try
                         {
                             uint IsSuccess = SHEmptyRecycleBin(IntPtr.Zero, null, RecycleFlags.SHERB_NOCONFIRMATION);
-                            MessageBox.Show(LocRM.GetString("RBCleanOkStr"), LocRM.GetString("RBCleanBtnStr"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(this, LocRM.GetString("RBCleanOkStr"), LocRM.GetString("RBCleanBtnStr"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                             AppendText(string.Format(LocRM.GetString("RBCleanOkStr")), Color.Red);
                             AppendText("------------------------------------------------------", Color.Green);
                             //recycleBinBox.Enabled = false;
@@ -188,7 +188,7 @@ namespace WindowsFormNavKiller
                         {
                             if (showEx)
                             {
-                                MessageBox.Show(LocRM.GetString("RBCleanBadStr") + ex.Message, LocRM.GetString("RBCleanBtnStr"), MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                                MessageBox.Show(this, LocRM.GetString("RBCleanBadStr") + ex.Message, LocRM.GetString("RBCleanBtnStr"), MessageBoxButtons.OK, MessageBoxIcon.Stop);
                                 AppendText(string.Format(LocRM.GetString("RBCleanBadStr")), Color.Red);
                                 AppendText("------------------------------------------------------", Color.Green);
                                 //Application.Exit();
@@ -211,8 +211,8 @@ namespace WindowsFormNavKiller
                 foreach (Process theprocess in proc)
                 {
                     theprocess.Kill();
-                    groupChrome.Enabled = false;
                 }
+                groupChrome.Enabled = false;
                 System.Threading.Thread.Sleep(100);
                 AppendText("------------------------------------------------------", Color.Green);
                 if (clearChrome.Checked)
@@ -272,8 +272,8 @@ namespace WindowsFormNavKiller
                 foreach (Process theprocess in proc)
                 {
                     theprocess.Kill();
-                    groupFireFox.Enabled = false;
                 }
+                groupFireFox.Enabled = false;
                 System.Threading.Thread.Sleep(100);
                 AppendText("------------------------------------------------------", Color.Green);
                 if (clearFireFox.Checked)
@@ -331,9 +331,8 @@ namespace WindowsFormNavKiller
             }
         }
 
-        private void killEdge_Click(object sender, EventArgs e)
+        private void killEdgeProcesses()
         {
-            initializeMe();
             Process[] proc = Process.GetProcessesByName("MicrosoftEdge");
             AppendText("------------------------------------------------------", Color.Green);
             if (proc.Length > 0)
@@ -341,61 +340,70 @@ namespace WindowsFormNavKiller
                 AppendText(LocRM.GetString("killStr") + " Microsoft Edge ...", Color.Green);
                 foreach (Process theprocess in proc)
                 {
-                    theprocess.Kill();
-                    groupEdge.Enabled = false;
-                }
-                System.Threading.Thread.Sleep(100);
-                AppendText("------------------------------------------------------", Color.Green);
-                //groupEdge.Enabled = false;
-                if (clearEdge.Checked)
-                {
-                    AppendText(LocRM.GetString("clearCacheStr") + " Microsoft Edge ...", Color.Green);
-                    fileDeleted = 0;
-                    dirDeleted = 0;
-                    string UserName = Environment.UserName;
-                    //Remove - Item - path "C:\Users\$($_.Name)\AppData\Local\Microsoft\Windows\WER\*" - Recurse - Force - EA SilentlyContinue #-Verbose
-                    //string dirName = appDataLocalDir + @"\Microsoft\Windows\WER";
-                    //DeleteDirectory(dirName);
-                    //Remove-Item - path "C:\Users\$($_.Name)\AppData\Local\Temp\*" - Recurse - Force - EA SilentlyContinue #-Verbose
-                    string dirName = appDataLocalDir + @"\Temp";
-                    DeleteDirectory(dirName);
-                    //Remove-Item - path "C:\Windows\Temp\*" - Recurse - Force - EA SilentlyContinue #-Verbose
-                    //dirName = @"C:\Windows\Temp";
-                    //DeleteDirectory(dirName);
-
-                    // Clear Session Restore Data
-                    AppendText(LocRM.GetString("clearSessionDataStr") + " Microsoft Edge ...", Color.Green);
-                    string[] theFiles = Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.History), "*", SearchOption.AllDirectories);
-                    foreach (string file in theFiles)
+                    try
                     {
-                        try
-                        {
-                            File.SetAttributes(file, FileAttributes.Normal);
-                            File.Delete(file);
-                            AppendText(LocRM.GetString("delFileStr") + file, Color.CadetBlue);
-                        }
-                        catch (Exception ex)
-                        {
-                            if (showEx)
-                            {
-                                AppendText(ex.Message, Color.Maroon);
-                            }
-                        }
-                        fileDeleted++;
+                        AppendText(LocRM.GetString("killStr") + " Microsoft Edge ..." + theprocess.Id, Color.BlueViolet);
+                        theprocess.Kill();
                     }
-                    AppendText(LocRM.GetString("doneStr") + " " + LocRM.GetString("fileDelStr"), Color.Red, false);
-                    AppendText(string.Format(": {0} ", fileDeleted), Color.Red);
-                    AppendText("------------------------------------------------------", Color.Green);
-                    emptyRecycleBin();
+                    catch (Exception ex)
+                    {
+                        if (showEx) AppendText(ex.Message, Color.Maroon);
+                        continue;
+                    }
                 }
-                showWarn();
             }
-            else
-            {
-                AppendText(" Microsoft Edge " + LocRM.GetString("procNotFound"), Color.Orange);
-                AppendText("------------------------------------------------------", Color.Green);
-            }
+            //proc = Process.GetProcessesByName("MicrosoftEdgeCP");
+            //AppendText("------------------------------------------------------", Color.Green);
+            //if (proc.Length > 0)
+            //{
+            //    AppendText(LocRM.GetString("killStr") + " Microsoft EdgeCP ...", Color.Green);
+            //    foreach (Process theprocess in proc)
+            //    {
+            //        try
+            //        {
+            //            AppendText(LocRM.GetString("killStr") + " Microsoft EdgeCP ..." + theprocess.Id, Color.BlueViolet);
+            //            theprocess.Kill();
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            if (showEx) AppendText(ex.Message, Color.Maroon);
+            //            continue;
+            //        }
+            //    }
+            //    groupEdge.Enabled = false;
+            //}
         }
+
+        private void killEdge_Click(object sender, EventArgs e)
+        {
+            initializeMe();
+            /*
+             * 
+             *  Here is some hack !
+             *  As I never succeded to clean cach / session Information for Edge
+             *  I will instead :
+             *  1) Kill all Edge processes
+             *  2) Restart / ReOpen an Edge process with "about:blank" startup page (which seems to be ok to restart without reloading the ols tabs !!)
+             *  3) The reKill the Edge processes
+             *  Doing this seems to allow to have a clen Edge session (with the default page opening) next time we will start edge !!
+             *  
+             */
+            killEdgeProcesses();
+            try {
+                AppendText(LocRM.GetString("restart") + " Microsoft Edge ...", Color.Green);
+                Process cp = Process.Start("microsoft-edge:about:blank");
+            }
+            catch (Exception ex)
+            {
+                if (showEx) AppendText(ex.Message, Color.Maroon);
+            }
+            killEdgeProcesses();
+            groupEdge.Enabled = false;
+            System.Threading.Thread.Sleep(100);
+            emptyRecycleBin();
+            showWarn();
+        }
+
         private void DeleteFile(string file)
         {
             try
@@ -430,15 +438,27 @@ namespace WindowsFormNavKiller
                     {
                         if (showEx)
                         {
-                            AppendText(ex.Message, Color.Maroon);
+                            AppendText(ex.Message, Color.Red);
                         }
-                    }
+                        continue;
+                   }
                     fileDeleted++;
                 }
 
             }
         }
 
+        private void deleteDirViaExe(string path)
+        {
+            ProcessStartInfo Info = new ProcessStartInfo();
+            Info.Arguments = "/C rd /s /q "+path;  
+            Info.WindowStyle = ProcessWindowStyle.Hidden;
+            Info.CreateNoWindow = true;
+            Info.FileName = "cmd.exe";
+            Process.Start(Info);
+            AppendText(LocRM.GetString("delDirStr") + " exe " + Info.ToString(), Color.OrangeRed);
+
+        }
         private void DeleteDirectory(string path)
         {
             if (Directory.Exists(path))
@@ -459,6 +479,7 @@ namespace WindowsFormNavKiller
                         {
                             AppendText(ex.Message, Color.DarkKhaki);
                         }
+                        continue;
                     }
                     fileDeleted++;
                 }
@@ -476,6 +497,7 @@ namespace WindowsFormNavKiller
                         {
                             AppendText(ex.Message, Color.Maroon);
                         }
+                        continue;
                     }
                 }
                 System.Threading.Thread.Sleep(1);

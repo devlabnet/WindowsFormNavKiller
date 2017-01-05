@@ -168,4 +168,7 @@
   <data name="UnableOpenSite" xml:space="preserve">
     <value>Unable to open download site for : </value>
   </data>
+  <data name="restart" xml:space="preserve">
+    <value>Restart</value>
+  </data>
 </root>

@@ -168,4 +168,7 @@
   <data name="UnableOpenSite" xml:space="preserve">
     <value>Impossible d'ouvrir le site de téléchargement pour : </value>
   </data>
+  <data name="restart" xml:space="preserve">
+    <value>Redémarrage de</value>
+  </data>
 </root>

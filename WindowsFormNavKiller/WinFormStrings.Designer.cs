@@ -196,6 +196,15 @@ namespace WindowsFormNavKiller {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restart.
+        /// </summary>
+        internal static string restart {
+            get {
+                return ResourceManager.GetString("restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to open download site for : .
         /// </summary>
         internal static string UnableOpenSite {

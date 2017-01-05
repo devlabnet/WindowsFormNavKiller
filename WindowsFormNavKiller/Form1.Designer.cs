@@ -36,7 +36,6 @@
             this.clearFireFox = new System.Windows.Forms.CheckBox();
             this.killFireFox = new System.Windows.Forms.Button();
             this.groupEdge = new System.Windows.Forms.GroupBox();
-            this.clearEdge = new System.Windows.Forms.CheckBox();
             this.killEdge = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.RichTextBox();
             this.recycleBinBox = new System.Windows.Forms.GroupBox();
@@ -104,19 +103,10 @@
             // 
             // groupEdge
             // 
-            this.groupEdge.Controls.Add(this.clearEdge);
             this.groupEdge.Controls.Add(this.killEdge);
             resources.ApplyResources(this.groupEdge, "groupEdge");
             this.groupEdge.Name = "groupEdge";
             this.groupEdge.TabStop = false;
-            // 
-            // clearEdge
-            // 
-            resources.ApplyResources(this.clearEdge, "clearEdge");
-            this.clearEdge.Checked = true;
-            this.clearEdge.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.clearEdge.Name = "clearEdge";
-            this.clearEdge.UseVisualStyleBackColor = true;
             // 
             // killEdge
             // 
@@ -222,7 +212,6 @@
             this.groupFireFox.ResumeLayout(false);
             this.groupFireFox.PerformLayout();
             this.groupEdge.ResumeLayout(false);
-            this.groupEdge.PerformLayout();
             this.recycleBinBox.ResumeLayout(false);
             this.recycleBinBox.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -243,7 +232,6 @@
         private System.Windows.Forms.CheckBox clearFireFox;
         private System.Windows.Forms.Button killFireFox;
         private System.Windows.Forms.GroupBox groupEdge;
-        private System.Windows.Forms.CheckBox clearEdge;
         private System.Windows.Forms.Button killEdge;
         private System.Windows.Forms.RichTextBox textBox;
         private System.Windows.Forms.GroupBox recycleBinBox;
